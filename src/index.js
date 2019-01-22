@@ -20,3 +20,28 @@ const d = document,
 d.addEventListener('DOMContentLoaded', e =>{
     main.innerHTML = tplHome
 })
+
+d.addEventListener('click', e => {
+    if ( e.target.matches('a[href="#"]')){
+        e.preventDefault()
+    }
+    
+    if ( e.target.matches('#home')) {
+        main.innerHTML = tplHome
+    } else if( e.target.matches('#about')) {
+        main.innerHTML = tplAbout
+    } 
+    else if( e.target.matches('#contact')) {
+        main.innerHTML = tplContact
+    } 
+    else if( e.target.matches('#admin')) {
+        firebase.auth().onAuthStateChanged( user =>{
+            if (user) {
+                main.innerHTML = tplAdminAuth
+            }
+            else{
+                main.innerHTML = tplAdmin
+            }
+        } )
+    } 
+})
