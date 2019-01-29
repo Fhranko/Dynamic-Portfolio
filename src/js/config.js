@@ -1,7 +1,7 @@
 import firebase from 'firebase/app'
 
 const config = {
-      apiKey: "AIzaSyBvSAGA6cXeUdZZTv18TRMeMogh0hV7ch0",
+    apiKey: "AIzaSyBvSAGA6cXeUdZZTv18TRMeMogh0hV7ch0",
     authDomain: "dymanic-portfolio.firebaseapp.com",
     databaseURL: "https://dymanic-portfolio.firebaseio.com",
     projectId: "dymanic-portfolio",

@@ -1,0 +1,31 @@
+.Logo {
+    position: fixed;
+    z-index: 999;
+    top: var(--logo-spacing);
+    left: var(--logo-spacing);
+    padding: var(--logo-spacing);
+    width: var(--logo-width);
+    height: var(--logo-width);
+    border-radius: 50%;
+    background-color: var(--alternate-color);
+
+    &>img{
+        // background-color: red;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.Title {
+    margin: 2rem 0;
+    font-size: 4vw;
+    color: var(--main-color);
+
+    * {
+        margin-bottom: .5rem;
+
+    } 
+    small {
+        text-transform: uppercase;
+    }
+}
