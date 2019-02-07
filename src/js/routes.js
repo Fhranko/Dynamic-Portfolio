@@ -3,6 +3,7 @@ import 'firebase/auth'
 import 'firebase/database'
 import 'firebase/storage'
 import './config'
+import {signIn, signOut} from './auth'
 
 import tplHome from '../html/home.tpl.html'
 import tplAbout from '../html/about.tpl.html'
@@ -38,8 +39,13 @@ const routes = () => {
                 else{
                     main.innerHTML = tplAdmin
                 }
+                console.log(user)
             } )
-        } 
+        } else if (e.target.matches('#login')) {
+            signIn()
+        } else if (e.target.matches('#logout')) {
+            signOut()
+        }
     })
 }
 
