@@ -10,6 +10,7 @@ import tplAbout from '../html/about.tpl.html'
 import tplContact from '../html/contact.tpl.html'
 import tplAdmin from '../html/admin.tpl.html'
 import tplAdminAuth from '../html/admin_auth.tpl.html'
+import savePhoto from './save_photo'
 
 const routes = () => {
     const d = document,
@@ -35,6 +36,9 @@ const routes = () => {
             firebase.auth().onAuthStateChanged( user =>{
                 if (user) {
                     main.innerHTML = tplAdminAuth
+                    d.querySelector('.Admin-name').textContent = user.displayName
+                    d.querySelector('.Admin-avatar').src = user.photoURL
+                    savePhoto()
                 }
                 else{
                     main.innerHTML = tplAdmin
